@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced Portfolio Simulation</h1>
+        
+        <div class="stock-section">
+            <label for="stock">Select Stock:</label>
+            <select id="stock">
+                <option value="AAPL">Apple (AAPL)</option>
+                <option value="TSLA">Tesla (TSLA)</option>
+                <option value="GOOGL">Google (GOOGL)</option>
+                <option value="AMZN">Amazon (AMZN)</option>
+            </select>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" min="1" value="1">
+            <button onclick="buyStock()">Buy</button>
+            <button onclick="sellStock()">Sell</button>
+        </div>
+
+        <div class="portfolio">
+            <h2>Portfolio</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Stock</th>
+                        <th>Quantity</th>
+                        <th>Buy Price</th>
+                        <th>Current Price</th>
+                        <th>P/L</th>
+                    </tr>
+                </thead>
+                <tbody id="portfolio-table"></tbody>
+            </table>
+            <h3>Total Portfolio Value: $<span id="portfolio-value">0</span></h3>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="portfolioChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
